@@ -8,9 +8,6 @@ import './App.css';
 
 function App() {
   const [userName, setUserName] = React.useState('');
-  const [bulbasaurVote, setBulbasaurVote] = React.useState(0);
-  const [charmanderVote, setCharmanderVote] = React.useState(0);
-  const [squirtleVote, setSquirtleVote] = React.useState(0);
 
   const handleUserInput = (inputValue) => {
     setUserName(inputValue);
@@ -21,20 +18,12 @@ function App() {
       <Header />
       <main>
         <UserInput onSubmit={handleUserInput} />
-        {userName && <p>Welcome, {userName}!</p>} {}
+        {userName && <p data-testid="user-input-display">Welcome, {userName}!</p>}
         <div className="PokemonVote">
-          <PokemonVote
-            bulbasaurVote={bulbasaurVote}
-            charmanderVote={charmanderVote}
-            squirtleVote={squirtleVote}
-          />
+          <PokemonVote />
         </div>
         <div className="CalculateWinner">
-          <CalculateWinner
-            bulbasaurVote={bulbasaurVote}
-            charmanderVote={charmanderVote}
-            squirtleVote={squirtleVote}
-          />
+          <CalculateWinner />
         </div>
       </main>
       <Footer />

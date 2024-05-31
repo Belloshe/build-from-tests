@@ -1,34 +1,31 @@
 import React, { useState } from 'react';
 
-const PokemonInputField = ({ onNameChange }) => {
-  const [newName, setNewName] = useState('');
+function PokemonInputField({ onNameChange, pokemon }) {
+  const [inputValue, setInputValue] = useState('');
 
-  const handleNameChange = (e) => {
-    setNewName(e.target.value);
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
   };
 
   const handleSubmit = () => {
-    if (newName.trim() !== '') {
-      onNameChange(newName);
-      setNewName('');
+    if (inputValue.trim()) {
+      onNameChange(inputValue);
+      setInputValue('');
     }
   };
 
   return (
     <div>
-      {onNameChange && ( 
-        <input
-          type="text"
-          placeholder="Enter new name"
-          value={newName}
-          onChange={handleNameChange}
-        />
-      )}
-      {onNameChange && ( 
-        <button onClick={handleSubmit}>Change Name</button>
-      )}
+      <input
+        type="text"
+        placeholder="Enter new name"
+        value={inputValue}
+        onChange={handleChange}
+        data-testid={`${pokemon}-input`}
+      />
+      <button onClick={handleSubmit}>Change Name</button>
     </div>
   );
-};
+}
 
 export default PokemonInputField;

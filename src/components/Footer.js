@@ -3,7 +3,7 @@ import React from 'react';
 function Footer() {
   return (
     <footer>
-      <h4>&copy; {new Date().getFullYear()} Pokemon Voting App</h4>
+      <h4> copyright 2024</h4>
     </footer>
   );
 }

@@ -5,7 +5,7 @@ import {
   getByTestId,
   waitFor,
 } from "@testing-library/react";
-import PokemonVote from ".";
+import PokemonVote from "../components/Pokemonvote";
 
 describe("PokemonVote component", () => {
   test("Renders the title, image, vote buttons, and scores for three Pokemon", () => {
@@ -23,7 +23,7 @@ describe("PokemonVote component", () => {
   test('increments Bulbasaur votes when the Vote Bulbasaur button is clicked', () => {
     render(<PokemonVote />);
 
-    const initialVoteCount = screen.getByTestId('bulbasaur-vote').textContent; //used a span tag to single out the vote count text content
+    const initialVoteCount = screen.getByTestId('bulbasaur-vote').textContent; 
 
     const voteBulbasaurButton = screen.getByText('Vote Bulbasaur');
     fireEvent.click(voteBulbasaurButton);

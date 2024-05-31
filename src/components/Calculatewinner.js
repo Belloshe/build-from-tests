@@ -1,6 +1,7 @@
+// CalculateWinner.js
 import React from 'react';
 
-const CalculateWinner = ({ bulbasaurVote, charmanderVote, squirtleVote }) => {
+const CalculateWinner = ({ bulbasaurVote = 0, charmanderVote = 0, squirtleVote = 0 }) => {
   const totalVotes = bulbasaurVote + charmanderVote + squirtleVote;
 
   if (totalVotes === 0) {

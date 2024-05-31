@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import PokemonInputField from './PokemonInputField'; 
+import PokemonInputField from './PokemonInputField';
+import CalculateWinner from './Calculatewinner';
 
 const PokemonVote = () => {
   const [pokemonList, setPokemonList] = useState([
@@ -20,12 +21,6 @@ const PokemonVote = () => {
     setPokemonList(updatedPokemonList);
   };
 
-  const getWinner = () => {
-    const maxVotes = Math.max(...pokemonList.map((pokemon) => pokemon.votes));
-    const winners = pokemonList.filter((pokemon) => pokemon.votes === maxVotes);
-    return winners.length === 1 ? winners[0].name : 'Tie';
-  };
-
   return (
     <div>
       <h2>Pokemon Vote</h2>
@@ -37,11 +32,16 @@ const PokemonVote = () => {
           </p>
           <button onClick={() => handleVote(index)}>Vote {pokemon.name}</button>
           <PokemonInputField
-            onNameChange={(newName) => handleNameChange(index, newName)} 
+            onNameChange={(newName) => handleNameChange(index, newName)}
+            pokemon={pokemon.name.toLowerCase()}
           />
         </div>
       ))}
-      <h2>Winner: {getWinner()}</h2>
+      <CalculateWinner
+        bulbasaurVote={pokemonList[0].votes}
+        charmanderVote={pokemonList[1].votes}
+        squirtleVote={pokemonList[2].votes}
+      />
     </div>
   );
 };
