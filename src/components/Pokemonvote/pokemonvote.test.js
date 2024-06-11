@@ -5,7 +5,7 @@ import {
   getByTestId,
   waitFor,
 } from "@testing-library/react";
-import PokemonVote from "../components/Pokemonvote";
+import PokemonVote from "./index";
 
 describe("PokemonVote component", () => {
   test("Renders the title, image, vote buttons, and scores for three Pokemon", () => {

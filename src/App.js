@@ -1,9 +1,9 @@
 import React from 'react';
-import PokemonVote from './components/Pokemonvote'; 
-import UserInput from './components/UserInput';
-import CalculateWinner from './components/Calculatewinner'; 
-import Header from './components/Header';
-import Footer from './components/Footer'; 
+import PokemonVote from './components/Pokemonvote/index'; 
+import UserInput from './components/Userinput/index';
+import CalculateWinner from './components/Calculatewinner/index'; 
+import Header from './components/Header/index';
+import Footer from './components/Footer/index'; 
 import './App.css'; 
 
 function App() {
