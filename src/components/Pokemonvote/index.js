@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import PokemonInputField from './PokemonInputField';
-import CalculateWinner from './Calculatewinner';
+import PokemonInputField from '../PokemonInputField/index';
+import CalculateWinner from '../Calculatewinner/index';
 
 const PokemonVote = () => {
   const [pokemonList, setPokemonList] = useState([
